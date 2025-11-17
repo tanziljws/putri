@@ -2,24 +2,15 @@
 
 @section('content')
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Styling untuk bagian berita */
+.gallery-header-band {
+    background-color: #f8fafc;
+    padding: 2rem 0 1rem;
 }
 
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-    background: #1e3a8a;
-    position: relative;
+.gallery-cards-band.news-section {
+    background-color: #f8fafc;
+    padding: 1rem 0 3rem;
 }
 
 .main-content {
@@ -284,9 +275,6 @@ body, html {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
     scroll-margin-top: 70px;
     position: relative;
 }
@@ -519,14 +507,13 @@ body, html {
     background: #ffffff !important;
     backdrop-filter: none;
     border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.25s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
     display: flex;
     flex-direction: row;
-    height: auto;
-    min-height: 200px;
+    height: 200px;
+    width: 100%;
 }
 
 .news-card:hover {
@@ -535,17 +522,19 @@ body, html {
 }
 
 .news-card .image-wrapper {
-    width: 280px;
+    width: 200px;
     height: 100%;
     flex-shrink: 0;
-    border-radius: 12px 0 0 12px;
     overflow: hidden;
+    border-radius: 12px 0 0 12px;
 }
 
 .news-card .image-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .news-card .card-body {
@@ -642,12 +631,14 @@ body, html {
     display: flex !important;
     flex-direction: row !important;
     width: 100%;
+    height: 200px;
 }
 
 /* Responsive News Card */
 @media (max-width: 768px) {
     .news-card {
         flex-direction: column;
+        height: auto;
     }
     
     .news-card .image-wrapper {
@@ -741,17 +732,31 @@ body, html {
 }
 
 .news-modal-content {
-    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    background: transparent;
     margin: 2% auto;
     padding: 0;
     border-radius: 20px;
     width: 90%;
     max-width: 900px;
-    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(84, 131, 179, 0.2);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(148, 163, 184, 0.35);
     animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     max-height: 92vh;
     overflow: hidden;
     position: relative;
+}
+
+.news-modal-topbar {
+    background: #1d4ed8;
+    color: #f9fafb;
+    padding: 1rem 2.25rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 20px 20px 0 0;
+}
+
+.news-modal-inner {
+    background: #f9fafb;
+    border-radius: 0 0 20px 20px;
 }
 
 @keyframes slideUp {
@@ -796,13 +801,15 @@ body, html {
 .news-modal-header-new {
     position: relative;
     overflow: hidden;
+    padding: 1.75rem 2.25rem 0;
 }
 
 .news-modal-image-wrapper {
     position: relative;
     width: 100%;
-    height: 350px;
+    height: 320px;
     overflow: hidden;
+    border-radius: 18px;
 }
 
 .news-modal-image-new {
@@ -868,9 +875,10 @@ body, html {
 
 /* Body */
 .news-modal-body-new {
-    padding: 2.25rem 2.25rem 1.85rem;
+    padding: 1.75rem 2.25rem 1.85rem;
     max-height: calc(92vh - 350px - 100px);
     overflow-y: auto;
+    background: #f9fafb;
 }
 
 .news-modal-body-new::-webkit-scrollbar {
@@ -894,17 +902,17 @@ body, html {
 .news-modal-title-new {
     font-size: 1.75rem;
     font-weight: 800;
-    color: #f1f5f9;
+    color: #0f172a;
     margin: 0 0 1.25rem 0;
     line-height: 1.3;
     letter-spacing: -0.5px;
 }
 
 .news-modal-content-text {
-    color: #cbd5e1;
+    color: #4b5563;
     font-size: 0.975rem;
     line-height: 1.8;
-    text-align: justify;
+    text-align: left;
 }
 
 .news-modal-content-text p {
@@ -915,8 +923,8 @@ body, html {
 /* Footer */
 .news-modal-footer-new {
     padding: 1.35rem 2.25rem;
-    background: rgba(15, 23, 42, 0.6);
-    border-top: 1px solid rgba(84, 131, 179, 0.2);
+    background: #f3f4f6;
+    border-top: 1px solid rgba(148, 163, 184, 0.4);
     display: flex;
     gap: 1.75rem;
     flex-wrap: wrap;
@@ -2395,6 +2403,7 @@ div[id]:target {
                             </span>
                         </div>
                     </div>
+                    </div> <!-- end .news-modal-inner -->
                 </div>
             </div>
 
@@ -2408,7 +2417,13 @@ div[id]:target {
                             <line x1="6" y1="6" x2="18" y2="18"/>
                         </svg>
                     </button>
-                    
+
+                    <!-- Topbar Judul -->
+                    <div class="news-modal-topbar">
+                        Berita Terkini
+                    </div>
+
+                    <div class="news-modal-inner">
                     <!-- Header dengan Image -->
                     <div class="news-modal-header-new">
                         @if($item->image)

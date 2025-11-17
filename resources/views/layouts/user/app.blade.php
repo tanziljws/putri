@@ -281,10 +281,10 @@
                         <a class="nav-link {{ request()->routeIs('user.dashboard') && !request()->has('section') ? 'active' : '' }}" href="{{ route('user.dashboard') }}">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->get('section') == 'berita' ? 'active' : '' }}" href="{{ route('user.dashboard', ['section' => 'berita']) }}#berita" data-section="berita">Berita Terkini</a>
+                        <a class="nav-link {{ request()->routeIs('user.news.index') ? 'active' : '' }}" href="{{ route('user.news.index') }}">Berita Terkini</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->get('section') == 'galeri' ? 'active' : '' }}" href="{{ route('user.dashboard', ['section' => 'galeri']) }}#galeri" data-section="galeri">Galeri</a>
+                        <a class="nav-link {{ request()->routeIs('user.gallery') ? 'active' : '' }}" href="{{ route('user.gallery') }}">Galeri</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('user.agendas.*') ? 'active' : '' }}" href="{{ route('user.agendas.index') }}">
@@ -343,12 +343,12 @@
             const searchMapping = {
                 'beranda': { type: 'page', target: '{{ route("user.dashboard") }}' },
                 'home': { type: 'page', target: '{{ route("user.dashboard") }}' },
-                'berita': { type: 'page', target: '{{ route("user.dashboard", ["section" => "berita"]) }}' },
-                'berita terkini': { type: 'page', target: '{{ route("user.dashboard", ["section" => "berita"]) }}' },
-                'news': { type: 'page', target: '{{ route("user.dashboard", ["section" => "berita"]) }}' },
-                'galeri': { type: 'page', target: '{{ route("user.dashboard", ["section" => "galeri"]) }}' },
-                'gallery': { type: 'page', target: '{{ route("user.dashboard", ["section" => "galeri"]) }}' },
-                'foto': { type: 'page', target: '{{ route("user.dashboard", ["section" => "galeri"]) }}' },
+                'berita': { type: 'page', target: '{{ route("user.news.index") }}' },
+                'berita terkini': { type: 'page', target: '{{ route("user.news.index") }}' },
+                'news': { type: 'page', target: '{{ route("user.news.index") }}' },
+                'galeri': { type: 'page', target: '{{ route("user.gallery") }}' },
+                'gallery': { type: 'page', target: '{{ route("user.gallery") }}' },
+                'foto': { type: 'page', target: '{{ route("user.gallery") }}' },
                 'hubungi': { type: 'page', target: '{{ route("user.contact") }}' },
                 'hubungi kami': { type: 'page', target: '{{ route("user.contact") }}' },
                 'kontak': { type: 'page', target: '{{ route("user.contact") }}' },

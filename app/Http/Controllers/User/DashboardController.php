@@ -9,6 +9,7 @@ use App\Models\TentangKami;
 use App\Models\News;
 use App\Models\About;
 use App\Models\AboutDetail;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -34,10 +35,9 @@ class DashboardController extends Controller
         $categories = Category::all();
         $data = TentangKami::first();
         
-        // Ambil berita terkini (3 berita terbaru yang published)
+        // Ambil semua berita terkini yang sudah published (tanpa batas jumlah)
         $news = News::where('status', 'published')
                     ->orderBy('published_date', 'desc')
-                    ->take(3)
                     ->get();
         
         // Ambil data tentang kami (Sejarah & Visi Misi)
@@ -52,22 +52,79 @@ class DashboardController extends Controller
 
     public function tentangKami()
     {
-        // Ambil data tentang kami (Sejarah & Visi Misi)
-        $abouts = About::all();
+        $tentangKami = TentangKami::first();
+        $about = About::first();
         
-        // Ambil detail tambahan tentang kami (cards)
-        $aboutDetails = AboutDetail::where('is_active', true)
-                                   ->orderBy('order')
-                                   ->get();
+        return view('user.tentangkami', [
+            'title' => 'Tentang Kami',
+            'tentangKami' => $tentangKami,
+            'about' => $about
+        ]);
+    }
 
-        return view('user.tentangkami', compact('abouts', 'aboutDetails'));
+    /**
+     * Menampilkan halaman semua berita
+     */
+    public function allNews()
+    {
+        // Ambil semua berita dengan status "published" (kolom ini sudah dipakai di index())
+        $news = News::where('status', 'published')
+                    ->orderBy('published_date', 'desc')
+                    ->paginate(6); // 6 berita per halaman
+
+        return view('user.news.news_page', [
+            'title' => 'Berita Terkini',
+            'news'  => $news,
+        ]);
     }
 
     public function gallery()
     {
-        $categories = Category::all();
-        $galleries = Gallery::with('category')->latest()->paginate(12);
+        $categories     = Category::all();
+        $categoryFilter = request()->get('category');
 
-        return view('user.gallery', compact('categories', 'galleries'));
+        $galleriesQuery = Gallery::with('category')->latest();
+
+        if ($categoryFilter) {
+            $galleriesQuery->whereHas('category', function ($q) use ($categoryFilter) {
+                $q->where('name', $categoryFilter);
+            });
+        }
+
+        $galleries = $galleriesQuery->paginate(12)->withQueryString();
+
+        return view('user.gallery', compact('categories', 'galleries', 'categoryFilter'));
+    }
+
+    /**
+     * Menampilkan halaman detail untuk satu galeri + foto terkait berdasarkan kategori yang sama
+     */
+    public function galleryDetail(Gallery $gallery)
+    {
+        $gallery->load('category');
+
+        // Jika ada query ?download=1 dan file tersedia, kirim file untuk di-download
+        if (request()->boolean('download') && $gallery->cover_image && Storage::disk('public')->exists($gallery->cover_image)) {
+            return Storage::disk('public')->download($gallery->cover_image, basename($gallery->cover_image));
+        }
+
+        $relatedGalleries = Gallery::with('category')
+            ->where('category_id', $gallery->category_id)
+            ->where('id', '!=', $gallery->id)
+            ->latest()
+            ->take(8)
+            ->get();
+
+        $fileSizeKb = null;
+        if ($gallery->cover_image && Storage::disk('public')->exists($gallery->cover_image)) {
+            $bytes = Storage::disk('public')->size($gallery->cover_image);
+            $fileSizeKb = $bytes ? round($bytes / 1024) : null;
+        }
+
+        return view('user.gallery-detail', [
+            'gallery'          => $gallery,
+            'relatedGalleries' => $relatedGalleries,
+            'fileSizeKb'       => $fileSizeKb,
+        ]);
     }
 }

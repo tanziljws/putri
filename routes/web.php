@@ -26,6 +26,8 @@ Route::get('/', [DashboardController::class, 'index'])->name('user.dashboard');
 
 // Halaman galeri untuk user (lihat semua galeri)
 Route::get('/galeri', [DashboardController::class, 'gallery'])->name('user.gallery');
+// Halaman detail galeri
+Route::get('/galeri/{gallery}', [DashboardController::class, 'galleryDetail'])->name('user.gallery.show');
 
 // Guest halaman galeri (list galeri untuk umum)
 Route::get('/guest', [GalleryController::class, 'index'])->name('guest.index');
@@ -54,6 +56,9 @@ Route::get('/tentang-kami', [DashboardController::class, 'tentangKami'])->name('
 // User Agenda Routes
 Route::get('/agenda', [UserAgendaController::class, 'index'])->name('user.agendas.index');
 Route::get('/agenda/{agenda}', [UserAgendaController::class, 'show'])->name('user.agendas.show');
+
+// User News Routes
+Route::get('/berita-terkini', [DashboardController::class, 'allNews'])->name('user.news.index');
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/footer', [FooterController::class, 'edit'])->name('footer.edit');
