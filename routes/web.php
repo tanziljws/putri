@@ -93,13 +93,12 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::resource('categories', CategoryController::class);
 
     // CRUD tentang kami
-    Route::resource('tentang-kami', \App\Http\Controllers\Admin\TentangKamiController::class);
 
     // News routes
     Route::resource('news', NewsController::class);
 
-    // About routes
-    Route::resource('about', AboutController::class);
+    // About routes (dinonaktifkan - tidak dipakai lagi di admin)
+    // Route::resource('about', AboutController::class);
 
     // System Info routes
     Route::get('system-info/edit', [SystemInfoController::class, 'edit'])->name('system-info.edit');

@@ -443,7 +443,7 @@ body:has(.sidebar):not(:has(.sidebar.collapsed)) .footer-modern {
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
-@if(request()->routeIs('user.tentangkami') || request()->routeIs('user.news.show'))
+@if(request()->routeIs('user.tentangkami') || request()->routeIs('user.news.show') || request()->routeIs('galleries.create'))
     <style>
         /* Hilangkan garis/border di bawah halaman untuk Tentang Kami & Detail Berita */
         .footer-bottom {

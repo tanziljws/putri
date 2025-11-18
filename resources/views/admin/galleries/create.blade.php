@@ -31,10 +31,10 @@
         font-size: 2rem;
         margin-bottom: 2rem;
         text-align: center;
-        font-weight: 700;
-        background: linear-gradient(90deg, #60a5fa 0%, #6366f1 50%, #3b82f6 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        font-weight: 800;
+        color: #e5f0ff;
+        text-shadow: 0 5px 18px rgba(15, 23, 42, 0.9);
+        letter-spacing: 0.04em;
     }
 
     .form-group {
@@ -58,9 +58,19 @@
         border-radius: 10px;
         font-size: 1rem;
         background: #f9fafb;
-        color: #111827;
+        color: #111827 !important;
         transition: all 0.3s ease;
         outline: none;
+    }
+
+    .form-control::placeholder {
+        color: #6b7280 !important;
+    }
+
+    input.form-control,
+    textarea.form-control,
+    select.form-control {
+        color: #111827 !important;
     }
     .form-control:focus {
         border-color: #6366f1;
