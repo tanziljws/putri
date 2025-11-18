@@ -28,8 +28,16 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         Auth::guard('admin')->logout();
+
+        // Hapus seluruh data session admin
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('admin.login');
+        $request->session()->flush();
+
+        return redirect()->route('admin.login')
+            ->with('success', 'Berhasil logout')
+            ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
+            ->header('Pragma', 'no-cache')
+            ->header('Expires', 'Fri, 01 Jan 1990 00:00:00 GMT');
     }
 }

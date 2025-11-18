@@ -571,6 +571,18 @@
         }, 500);
       });
     }, 5000);
+
+    // Lock browser back button on admin login page
+    // Setiap kali tombol Back ditekan, paksa browser maju lagi (history.go(1))
+    (function() {
+      // Tambah satu state saat halaman login dibuka
+      window.history.pushState(null, '', window.location.href);
+
+      window.addEventListener('popstate', function () {
+        // Paksa kembali maju satu langkah sehingga user tetap di halaman login
+        window.history.go(1);
+      });
+    })();
   </script>
 </body>
 </html>

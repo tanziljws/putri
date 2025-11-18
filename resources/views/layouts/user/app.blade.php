@@ -142,30 +142,6 @@
             transform: translateX(2px);
         }
 
-        /* Login Button */
-        .btn-login {
-            background: #ffffff;
-            color: #1e3a8a;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            padding: 0.4rem 1rem;
-            font-size: 0.8rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s;
-            height: 34px;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .btn-login:hover {
-            background: #f1f5f9;
-            transform: translateY(-2px);
-            color: #1e3a8a;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
         /* Mobile Toggle */
         .navbar-toggler {
             border: 1px solid #334155;
@@ -213,12 +189,6 @@
                 margin-bottom: 1rem;
             }
 
-            .btn-login {
-                width: 100%;
-                margin-top: 0.5rem;
-                justify-content: center;
-            }
-
             .navbar-nav {
                 margin-top: 1rem;
             }
@@ -237,11 +207,6 @@
             .school-logo {
                 width: 38px;
                 height: 38px;
-            }
-
-            .btn-login {
-                padding: 0.4rem 0.9rem;
-                font-size: 0.75rem;
             }
 
             .navbar .container {
@@ -306,13 +271,6 @@
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
-                </div>
-
-                <!-- Login Button -->
-                <div>
-                    <a class="btn btn-login" href="{{ route('admin.login') }}">
-                         Login Admin
-                    </a>
                 </div>
             </div>
         </div>

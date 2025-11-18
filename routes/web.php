@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\PreventBackHistory;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\CategoryController;
@@ -30,8 +31,8 @@ Route::get('/galeri', [DashboardController::class, 'gallery'])->name('user.galle
 // Halaman detail galeri
 Route::get('/galeri/{gallery}', [DashboardController::class, 'galleryDetail'])->name('user.gallery.show');
 
-// Guest halaman galeri (list galeri untuk umum)
-Route::get('/guest', [GalleryController::class, 'index'])->name('guest.index');
+// Guest halaman galeri (list galeri untuk umum) - gunakan tampilan user, BUKAN halaman admin
+Route::get('/guest', [DashboardController::class, 'gallery'])->name('guest.index');
 
 // Guest halaman view statis (opsional, kalau memang ada file view `resources/views/user/guest.blade.php`)
 Route::get('/guest-view', function () {
@@ -65,10 +66,13 @@ Route::get('/berita-terkini/{news}', [DashboardController::class, 'newsDetail'])
 // Global search
 Route::get('/search', [SearchController::class, 'index'])->name('user.search');
 
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/footer', [FooterController::class, 'edit'])->name('footer.edit');
-    Route::put('/footer', [FooterController::class, 'update'])->name('footer.update');
-});
+Route::middleware(['auth:admin', PreventBackHistory::class])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::get('/footer', [FooterController::class, 'edit'])->name('footer.edit');
+        Route::put('/footer', [FooterController::class, 'update'])->name('footer.update');
+    });
 
 
 /*
@@ -82,7 +86,7 @@ Route::get('admin/login', [AuthController::class, 'showLoginForm'])->name('admin
 Route::post('admin/login', [AuthController::class, 'login'])->name('admin.login.submit');
 
 // Admin protected routes
-Route::middleware('auth:admin')->prefix('admin')->group(function () {
+Route::middleware(['auth:admin', PreventBackHistory::class])->prefix('admin')->group(function () {
     // Dashboard admin
     Route::get('dashboard', [GalleryController::class, 'dashboard'])->name('admin.dashboard');
 
