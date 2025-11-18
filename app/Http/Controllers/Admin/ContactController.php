@@ -35,7 +35,7 @@ class ContactController extends Controller
         $contact = Contact::findOrFail($id);
         $contact->delete();
         
-        return redirect()->route('contacts.index')
+        return redirect()->route('admin.contacts.index')
             ->with('success', 'Pesan berhasil dihapus');
     }
 

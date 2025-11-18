@@ -237,7 +237,7 @@
 </style>
 
 <div class="detail-container">
-    <a href="{{ route('contacts.index') }}" class="back-link">
+    <a href="{{ route('admin.contacts.index') }}" class="back-link">
         <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
         </svg>

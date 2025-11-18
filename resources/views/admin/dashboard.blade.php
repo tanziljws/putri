@@ -419,7 +419,7 @@
         </a>
 
         <!-- Unread Messages Card -->
-        <a href="{{ route('contacts.index') }}" style="text-decoration:none;position:relative;display:block;">
+        <a href="{{ route('admin.contacts.index') }}" style="text-decoration:none;position:relative;display:block;">
             @if($unreadContacts > 0)
                 <div style="position:absolute;top:-12px;right:8px;min-width:40px;height:40px;background:#ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;font-weight:700;box-shadow:0 4px 20px rgba(239,68,68,0.9),0 0 0 4px #ffffff;z-index:20;padding:0 10px;border:4px solid #ffffff;animation:pulse 2s infinite;">
                     {{ $unreadContacts }}
@@ -539,7 +539,7 @@
                 <h3 style="color:#f1f5f9;font-size:1.1rem;font-weight:600;margin:0 0 0.25rem 0;">🔔 Anda memiliki {{ $unreadContacts }} pesan baru!</h3>
                 <p style="color:#94a3b8;margin:0;font-size:0.9rem;">Klik untuk melihat dan membalas pesan dari pengunjung.</p>
             </div>
-            <a href="{{ route('contacts.index') }}" style="background:#ef4444;color:white;padding:0.75rem 1.5rem;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.2s;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">
+            <a href="{{ route('admin.contacts.index') }}" style="background:#ef4444;color:white;padding:0.75rem 1.5rem;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.2s;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">
                 Lihat Pesan
             </a>
         </div>
