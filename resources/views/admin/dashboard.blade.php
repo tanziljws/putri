@@ -2,7 +2,7 @@
 
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('css/dashboard-futuristic.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/dashboard-futuristic.css') }}">
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');

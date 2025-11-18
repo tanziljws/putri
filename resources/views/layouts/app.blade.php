@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Galeri Sekolah</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
@@ -970,7 +970,7 @@
             </button>
             <a href="{{ url('/') }}" style="display: flex; align-items: center; gap: 0.75rem;">
                 <div class="logo-icon">
-                    <img src="{{ asset('images/download (1).png') }}" alt="Logo" style="width: 100%; height: 100%; object-fit: contain;">
+                    <img src="{{ secure_asset('images/download (1).png') }}" alt="Logo" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <strong>Galeri Sekolah</strong>
             </a>
@@ -981,7 +981,7 @@
                     <!-- Profile Dropdown -->
                     <div class="profile-dropdown">
                         <button class="profile-button" onclick="toggleProfileDropdown()">
-                            <img src="{{ auth('admin')->user()->profile_photo ? asset('storage/' . auth('admin')->user()->profile_photo) : asset('images/default-avatar.svg') }}" 
+                            <img src="{{ auth('admin')->user()->profile_photo ? secure_asset('storage/' . auth('admin')->user()->profile_photo) : secure_asset('images/default-avatar.svg') }}" 
                                  alt="Profile" 
                                  class="profile-avatar">
                             <span>{{ auth('admin')->user()->username }}</span>
