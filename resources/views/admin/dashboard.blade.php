@@ -377,7 +377,7 @@
     <!-- Stats Grid - Glassmorphism Cards -->
     <div class="stats-grid">
         <!-- Total Galleries Card -->
-        <a href="{{ route('galleries.index') }}" style="text-decoration:none;">
+        <a href="{{ route('admin.galleries.index') }}" style="text-decoration:none;">
             <div class="glass-card">
                 <div class="neon-glow" style="top: -50px; right: -50px;"></div>
                 <div class="stat-icon">

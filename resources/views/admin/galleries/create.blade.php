@@ -161,7 +161,7 @@
 
         <div class="btn-row">
             <button type="submit" class="btn-aesthetic">+ Tambah Galeri</button>
-            <a href="{{ route('galleries.index') }}" class="btn-back">Kembali</a>
+            <a href="{{ route('admin.galleries.index') }}" class="btn-back">Kembali</a>
         </div>
     </form>
 </div>

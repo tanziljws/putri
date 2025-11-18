@@ -91,7 +91,7 @@
                 </svg>
                 Update Galeri
             </button>
-            <a href="{{ route('galleries.index') }}" class="btn-secondary">
+            <a href="{{ route('admin.galleries.index') }}" class="btn-secondary">
                 Kembali
             </a>
         </div>

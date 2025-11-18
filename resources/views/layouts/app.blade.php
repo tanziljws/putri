@@ -1033,7 +1033,7 @@
                 </svg>
                 Dashboard
             </a>
-            <a href="{{ route('galleries.index') }}" class="{{ request()->is('admin/galleries*') && !request()->is('admin/dashboard') ? 'active' : '' }}">
+            <a href="{{ route('admin.galleries.index') }}" class="{{ request()->is('admin/galleries*') && !request()->is('admin/dashboard') ? 'active' : '' }}">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <rect x="3" y="5" width="18" height="14" rx="3"/>
                     <circle cx="8.5" cy="12.5" r="1.5"/>

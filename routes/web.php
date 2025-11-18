@@ -86,9 +86,9 @@ Route::get('admin/login', [AuthController::class, 'showLoginForm'])->name('admin
 Route::post('admin/login', [AuthController::class, 'login'])->name('admin.login.submit');
 
 // Admin protected routes
-Route::middleware(['auth:admin', PreventBackHistory::class])->prefix('admin')->group(function () {
+Route::middleware(['auth:admin', PreventBackHistory::class])->prefix('admin')->name('admin.')->group(function () {
     // Dashboard admin
-    Route::get('dashboard', [GalleryController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('dashboard', [GalleryController::class, 'dashboard'])->name('dashboard');
 
     // CRUD galeri
     Route::resource('galleries', GalleryController::class);
@@ -121,12 +121,12 @@ Route::middleware(['auth:admin', PreventBackHistory::class])->prefix('admin')->g
     Route::patch('agendas/{agenda}/toggle-publish', [AdminAgendaController::class, 'togglePublish'])->name('agendas.toggle-publish');
 
     // Profile routes
-    Route::get('profile', [ProfileController::class, 'edit'])->name('admin.profile.edit');
-    Route::put('profile', [ProfileController::class, 'update'])->name('admin.profile.update');
-    Route::get('profile/change-password', [ProfileController::class, 'changePassword'])->name('admin.profile.change-password');
-    Route::put('profile/change-password', [ProfileController::class, 'updatePassword'])->name('admin.profile.update-password');
-    Route::delete('profile/photo', [ProfileController::class, 'deletePhoto'])->name('admin.profile.delete-photo');
+    Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::get('profile/change-password', [ProfileController::class, 'changePassword'])->name('profile.change-password');
+    Route::put('profile/change-password', [ProfileController::class, 'updatePassword'])->name('profile.update-password');
+    Route::delete('profile/photo', [ProfileController::class, 'deletePhoto'])->name('profile.delete-photo');
 
     // Logout
-    Route::post('logout', [AuthController::class, 'logout'])->name('admin.logout');
+    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 });

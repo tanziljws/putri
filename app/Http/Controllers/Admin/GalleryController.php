@@ -86,7 +86,7 @@ class GalleryController extends Controller
             'category_id' => $request->category_id,
         ]);
 
-        return redirect()->route('galleries.index')->with('success', 'Galeri berhasil ditambahkan');
+        return redirect()->route('admin.galleries.index')->with('success', 'Galeri berhasil ditambahkan');
     }
 
     // ✏️ Form edit
@@ -123,7 +123,7 @@ class GalleryController extends Controller
         $gallery->category_id = $request->category_id;
         $gallery->save();
 
-        return redirect()->route('galleries.index')->with('success', 'Galeri berhasil diperbarui');
+        return redirect()->route('admin.galleries.index')->with('success', 'Galeri berhasil diperbarui');
     }
 
     // ❌ Hapus galeri
@@ -138,6 +138,6 @@ class GalleryController extends Controller
 
         $gallery->delete();
 
-        return redirect()->route('galleries.index')->with('success', 'Galeri berhasil dihapus');
+        return redirect()->route('admin.galleries.index')->with('success', 'Galeri berhasil dihapus');
     }
 }
