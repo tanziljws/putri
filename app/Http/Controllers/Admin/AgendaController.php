@@ -41,7 +41,7 @@ class AgendaController extends Controller
 
         Agenda::create($validated);
 
-        return redirect()->route('agendas.index')
+        return redirect()->route('admin.agendas.index')
             ->with('success', 'Agenda berhasil ditambahkan');
     }
 
@@ -74,7 +74,7 @@ class AgendaController extends Controller
 
         $agenda->update($validated);
 
-        return redirect()->route('agendas.index')
+        return redirect()->route('admin.agendas.index')
             ->with('success', 'Agenda berhasil diperbarui');
     }
 
@@ -82,7 +82,7 @@ class AgendaController extends Controller
     {
         $agenda->delete();
 
-        return redirect()->route('agendas.index')
+        return redirect()->route('admin.agendas.index')
             ->with('success', 'Agenda berhasil dihapus');
     }
 
