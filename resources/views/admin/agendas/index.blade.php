@@ -249,7 +249,7 @@
             </svg>
             Agenda Kegiatan
         </h1>
-        <a href="{{ route('agendas.create') }}" class="btn-add">
+        <a href="{{ route('admin.agendas.create') }}" class="btn-add">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width: 20px; height: 20px;">
                 <path d="M12 4v16m8-8H4"/>
             </svg>
@@ -299,12 +299,12 @@
                                         <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                                     </svg>
                                 </button>
-                                <a href="{{ route('agendas.edit', $agenda->id) }}" class="btn-icon btn-edit" title="Edit">
+                                <a href="{{ route('admin.agendas.edit', $agenda->id) }}" class="btn-icon btn-edit" title="Edit">
                                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
                                     </svg>
                                 </a>
-                                <form action="{{ route('agendas.toggle-publish', $agenda->id) }}" method="POST" style="display:inline-block;margin:0;">
+                                <form action="{{ route('admin.agendas.toggle-publish', $agenda->id) }}" method="POST" style="display:inline-block;margin:0;">
                                     @csrf
                                     @method('PATCH')
                                     <button type="submit" class="btn-icon {{ $agenda->is_published ? 'btn-hide' : 'btn-publish' }}" title="{{ $agenda->is_published ? 'Hide' : 'Publish' }}">
@@ -318,7 +318,7 @@
                                         </svg>
                                     </button>
                                 </form>
-                                <form action="{{ route('agendas.destroy', $agenda->id) }}" method="POST" style="display:inline-block;margin:0;">
+                                <form action="{{ route('admin.agendas.destroy', $agenda->id) }}" method="POST" style="display:inline-block;margin:0;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn-icon btn-delete" onclick="return confirm('Yakin hapus agenda ini?')" title="Hapus">

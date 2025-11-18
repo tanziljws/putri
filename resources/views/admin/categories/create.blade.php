@@ -118,7 +118,7 @@
 <div class="category-section">
     <h1>+ Tambah Kategori</h1>
 
-    <form action="{{ route('categories.store') }}" method="POST">
+    <form action="{{ route('admin.categories.store') }}" method="POST">
         @csrf
         <div class="form-group">
             <label>Nama Kategori</label>

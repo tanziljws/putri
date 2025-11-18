@@ -263,7 +263,7 @@
                     <span class="status-badge status-unread">
                         Tandai Belum Dibaca
                     </span>
-                    <form action="{{ route('contacts.mark-read', $contact->id) }}" method="POST" style="display: inline; margin: 0;">
+                    <form action="{{ route('admin.contacts.mark-read', $contact->id) }}" method="POST" style="display: inline; margin: 0;">
                         @csrf
                         @method('PATCH')
                         <button type="submit" class="btn-mark btn-mark-read">
@@ -274,7 +274,7 @@
                     <span class="status-badge status-read">
                         Sudah Dibaca
                     </span>
-                    <form action="{{ route('contacts.mark-unread', $contact->id) }}" method="POST" style="display: inline; margin: 0;">
+                    <form action="{{ route('admin.contacts.mark-unread', $contact->id) }}" method="POST" style="display: inline; margin: 0;">
                         @csrf
                         @method('PATCH')
                         <button type="submit" class="btn-mark btn-mark-unread">
@@ -323,7 +323,7 @@
                     Balas via Email
                 </a>
                 
-                <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST" style="display: inline; margin: 0;">
+                <form action="{{ route('admin.contacts.destroy', $contact->id) }}" method="POST" style="display: inline; margin: 0;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" 

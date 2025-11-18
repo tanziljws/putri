@@ -210,7 +210,7 @@
 <div class="news-container">
     <div class="news-header">
         <h1>Manajemen Berita Terkini</h1>
-        <a href="{{ route('news.create') }}" class="btn-add">
+        <a href="{{ route('admin.news.create') }}" class="btn-add">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width: 20px; height: 20px;">
                 <path d="M12 4v16m8-8H4"/>
             </svg>
@@ -258,10 +258,10 @@
 
                 <!-- Footer Actions -->
                 <div class="news-card-footer">
-                    <a href="{{ route('news.edit', $item) }}" class="btn-edit">
+                    <a href="{{ route('admin.news.edit', $item) }}" class="btn-edit">
                         Edit
                     </a>
-                    <form action="{{ route('news.destroy', $item) }}" method="POST" style="flex:1;margin:0;" onsubmit="return confirm('Yakin ingin menghapus berita ini?');">
+                    <form action="{{ route('admin.news.destroy', $item) }}" method="POST" style="flex:1;margin:0;" onsubmit="return confirm('Yakin ingin menghapus berita ini?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn-delete" style="width:100%;">

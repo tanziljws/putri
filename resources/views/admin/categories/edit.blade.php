@@ -12,7 +12,7 @@
 </div>
 
 <div class="modern-form-container">
-    <form action="{{ route('categories.update', $category->id) }}" method="POST" class="modern-form">
+    <form action="{{ route('admin.categories.update', $category->id) }}" method="POST" class="modern-form">
         @csrf
         @method('PUT')
         

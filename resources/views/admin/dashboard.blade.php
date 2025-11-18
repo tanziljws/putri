@@ -449,7 +449,7 @@
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
             <!-- Tambah Foto -->
-            <a href="{{ route('galleries.create') }}" style="text-decoration: none;">
+            <a href="{{ route('admin.galleries.create') }}" style="text-decoration: none;">
                 <div style="background: #ffffff; border-radius: 16px; padding: 1.5rem; transition: all 0.3s; border: 1px solid #e2e8f0; cursor: pointer; height: 100%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);" 
                      onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(0, 0, 0, 0.15)'; this.style.borderColor='#3b82f6';" 
                      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.08)'; this.style.borderColor='#e2e8f0';">
@@ -468,7 +468,7 @@
             </a>
 
             <!-- Tambah Berita -->
-            <a href="{{ route('news.create') }}" style="text-decoration: none;">
+            <a href="{{ route('admin.news.create') }}" style="text-decoration: none;">
                 <div style="background: #ffffff; border-radius: 16px; padding: 1.5rem; transition: all 0.3s; border: 1px solid #e2e8f0; cursor: pointer; height: 100%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);" 
                      onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(0, 0, 0, 0.15)'; this.style.borderColor='#3b82f6';" 
                      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.08)'; this.style.borderColor='#e2e8f0';">
@@ -487,7 +487,7 @@
             </a>
 
             <!-- Tambah Kategori -->
-            <a href="{{ route('categories.create') }}" style="text-decoration: none;">
+            <a href="{{ route('admin.categories.create') }}" style="text-decoration: none;">
                 <div style="background: #ffffff; border-radius: 16px; padding: 1.5rem; transition: all 0.3s; border: 1px solid #e2e8f0; cursor: pointer; height: 100%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);" 
                      onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(0, 0, 0, 0.15)'; this.style.borderColor='#3b82f6';" 
                      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.08)'; this.style.borderColor='#e2e8f0';">
@@ -506,7 +506,7 @@
             </a>
 
             <!-- Tambah Agenda -->
-            <a href="{{ route('agendas.create') }}" style="text-decoration: none;">
+            <a href="{{ route('admin.agendas.create') }}" style="text-decoration: none;">
                 <div style="background: #ffffff; border-radius: 16px; padding: 1.5rem; transition: all 0.3s; border: 1px solid #e2e8f0; cursor: pointer; height: 100%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);" 
                      onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(0, 0, 0, 0.15)'; this.style.borderColor='#3b82f6';" 
                      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.08)'; this.style.borderColor='#e2e8f0';">

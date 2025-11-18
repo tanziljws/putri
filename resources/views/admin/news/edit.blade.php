@@ -16,7 +16,7 @@
         <h3 class="form-title">Form Edit Berita</h3>
     </div>
     
-    <form action="{{ route('news.update', $news) }}" method="POST" enctype="multipart/form-data" class="modern-form">
+    <form action="{{ route('admin.news.update', $news) }}" method="POST" enctype="multipart/form-data" class="modern-form">
         @csrf
         @method('PUT')
         

@@ -200,7 +200,7 @@
             </svg>
             Daftar Kategori
         </h1>
-        <a href="{{ route('categories.create') }}" class="btn-add">
+        <a href="{{ route('admin.categories.create') }}" class="btn-add">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width: 20px; height: 20px;">
                 <path d="M12 4v16m8-8H4"/>
             </svg>
@@ -230,12 +230,12 @@
                         <td>{{ $category->created_at->format('d/m/Y') }}</td>
                         <td>
                             <div class="action-buttons">
-                                <a href="{{ route('categories.edit',$category->id) }}" class="btn-icon btn-edit" title="Edit">
+                                <a href="{{ route('admin.categories.edit',$category->id) }}" class="btn-icon btn-edit" title="Edit">
                                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                         <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
                                     </svg>
                                 </a>
-                                <form action="{{ route('categories.destroy',$category->id) }}" method="POST" style="display:inline-block;margin:0;">
+                                <form action="{{ route('admin.categories.destroy',$category->id) }}" method="POST" style="display:inline-block;margin:0;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn-icon btn-delete" onclick="return confirm('Yakin hapus kategori ini?')" title="Hapus">
