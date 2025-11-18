@@ -586,7 +586,7 @@
                 </svg>
                 <h2 style="color:#1e293b;font-size:1.75rem;font-weight:700;margin:0;font-family:'Poppins',sans-serif;letter-spacing:-0.5px;">Informasi Sistem</h2>
             </div>
-            <a href="{{ route('system-info.edit') }}" style="background:#3b82f6;color:#fff;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;">Edit</a>
+            <a href="{{ route('admin.system-info.edit') }}" style="background:#3b82f6;color:#fff;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;">Edit</a>
         </div>
         <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;">
