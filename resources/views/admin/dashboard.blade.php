@@ -391,7 +391,7 @@
         </a>
 
         <!-- Total Categories Card -->
-        <a href="{{ route('categories.index') }}" style="text-decoration:none;">
+        <a href="{{ route('admin.categories.index') }}" style="text-decoration:none;">
             <div class="glass-card">
                 <div class="neon-glow" style="top: -50px; right: -50px;"></div>
                 <div class="stat-icon">

@@ -1041,7 +1041,7 @@
                 </svg>
                 Galeri
             </a>
-            <a href="{{ route('categories.index') }}" class="{{ request()->routeIs('categories.*') ? 'active' : '' }}">
+            <a href="{{ route('admin.categories.index') }}" class="{{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <rect x="3" y="3" width="7" height="7" rx="2"/>
                     <rect x="14" y="3" width="7" height="7" rx="2"/>

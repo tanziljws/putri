@@ -37,7 +37,7 @@
                 </svg>
                 Update Kategori
             </button>
-            <a href="{{ route('categories.index') }}" class="btn-secondary">
+            <a href="{{ route('admin.categories.index') }}" class="btn-secondary">
                 Kembali
             </a>
         </div>

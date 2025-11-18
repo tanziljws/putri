@@ -126,7 +126,7 @@
         </div>
         <div class="btn-row">
             <button type="submit" class="btn-save">Simpan</button>
-            <a href="{{ route('categories.index') }}" class="btn-back">Kembali</a>
+            <a href="{{ route('admin.categories.index') }}" class="btn-back">Kembali</a>
         </div>
     </form>
 </div>

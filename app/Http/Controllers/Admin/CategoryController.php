@@ -30,7 +30,7 @@ class CategoryController extends Controller
 
         Category::create($request->all());
 
-        return redirect()->route('categories.index')->with('success', 'Kategori berhasil ditambahkan');
+        return redirect()->route('admin.categories.index')->with('success', 'Kategori berhasil ditambahkan');
     }
 
     // Form edit kategori
@@ -48,13 +48,13 @@ class CategoryController extends Controller
 
         $category->update($request->all());
 
-        return redirect()->route('categories.index')->with('success', 'Kategori berhasil diperbarui');
+        return redirect()->route('admin.categories.index')->with('success', 'Kategori berhasil diperbarui');
     }
 
     // Hapus kategori
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('categories.index')->with('success', 'Kategori berhasil dihapus');
+        return redirect()->route('admin.categories.index')->with('success', 'Kategori berhasil dihapus');
     }
 }
