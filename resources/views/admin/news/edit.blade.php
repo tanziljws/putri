@@ -102,7 +102,7 @@
                 </svg>
                 Update Berita
             </button>
-            <a href="{{ route('news.index') }}" class="btn-secondary">
+            <a href="{{ route('admin.news.index') }}" class="btn-secondary">
                 Kembali
             </a>
         </div>

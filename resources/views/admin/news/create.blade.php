@@ -206,7 +206,7 @@
 
         <div class="btn-row">
             <button type="submit" class="btn-aesthetic">+ Simpan Berita</button>
-            <a href="{{ route('news.index') }}" class="btn-back">Kembali</a>
+            <a href="{{ route('admin.news.index') }}" class="btn-back">Kembali</a>
         </div>
     </form>
 </div>
