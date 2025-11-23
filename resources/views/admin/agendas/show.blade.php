@@ -74,7 +74,7 @@
         </div>
 
         <div style="display: flex; gap: 1rem; padding-top: 1rem; border-top: 1px solid #334155;">
-            <a href="{{ route('agendas.edit', $agenda->id) }}" 
+            <a href="{{ route('admin.agendas.edit', $agenda->id) }}" 
                class="btn" 
                style="display: inline-flex; align-items: center; gap: 0.5rem; background: #3b82f6;">
                 <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -83,7 +83,7 @@
                 Edit Agenda
             </a>
             
-            <form action="{{ route('agendas.toggle-publish', $agenda->id) }}" method="POST" style="display: inline;">
+            <form action="{{ route('admin.agendas.toggle-publish', $agenda->id) }}" method="POST" style="display: inline;">
                 @csrf
                 @method('PATCH')
                 <button type="submit" 
@@ -101,7 +101,7 @@
                 </button>
             </form>
 
-            <a href="{{ route('agendas.index') }}" 
+            <a href="{{ route('admin.agendas.index') }}" 
                class="btn" 
                style="background: #64748b; display: inline-flex; align-items: center; gap: 0.5rem;">
                 <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -110,7 +110,7 @@
                 Kembali
             </a>
 
-            <form action="{{ route('agendas.destroy', $agenda->id) }}" 
+            <form action="{{ route('admin.agendas.destroy', $agenda->id) }}" 
                   method="POST" 
                   style="display: inline; margin-left: auto;"
                   onsubmit="return confirm('Yakin ingin menghapus agenda ini?')">

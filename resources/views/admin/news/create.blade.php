@@ -136,7 +136,7 @@
 
 <div class="gallery-card">
     <h1>+ Tambah Berita Baru</h1>
-    <form action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.news.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
@@ -206,7 +206,7 @@
 
         <div class="btn-row">
             <button type="submit" class="btn-aesthetic">+ Simpan Berita</button>
-            <a href="{{ route('news.index') }}" class="btn-back">Kembali</a>
+            <a href="{{ route('admin.news.index') }}" class="btn-back">Kembali</a>
         </div>
     </form>
 </div>

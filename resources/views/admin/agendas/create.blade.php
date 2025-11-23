@@ -169,7 +169,7 @@
 
 <div class="gallery-card">
     <h1>+ Tambah Agenda Baru</h1>
-    <form action="{{ route('agendas.store') }}" method="POST">
+    <form action="{{ route('admin.agendas.store') }}" method="POST">
         @csrf
         
         <div class="form-group">
@@ -239,7 +239,7 @@
 
         <div class="btn-row">
             <button type="submit" class="btn-aesthetic">+ Simpan Agenda</button>
-            <a href="{{ route('agendas.index') }}" class="btn-back">Kembali</a>
+            <a href="{{ route('admin.agendas.index') }}" class="btn-back">Kembali</a>
         </div>
     </form>
 </div>

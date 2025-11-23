@@ -237,7 +237,7 @@
 </style>
 
 <div class="detail-container">
-    <a href="{{ route('contacts.index') }}" class="back-link">
+    <a href="{{ route('admin.contacts.index') }}" class="back-link">
         <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
         </svg>
@@ -263,7 +263,7 @@
                     <span class="status-badge status-unread">
                         Tandai Belum Dibaca
                     </span>
-                    <form action="{{ route('contacts.mark-read', $contact->id) }}" method="POST" style="display: inline; margin: 0;">
+                    <form action="{{ route('admin.contacts.mark-read', $contact->id) }}" method="POST" style="display: inline; margin: 0;">
                         @csrf
                         @method('PATCH')
                         <button type="submit" class="btn-mark btn-mark-read">
@@ -274,7 +274,7 @@
                     <span class="status-badge status-read">
                         Sudah Dibaca
                     </span>
-                    <form action="{{ route('contacts.mark-unread', $contact->id) }}" method="POST" style="display: inline; margin: 0;">
+                    <form action="{{ route('admin.contacts.mark-unread', $contact->id) }}" method="POST" style="display: inline; margin: 0;">
                         @csrf
                         @method('PATCH')
                         <button type="submit" class="btn-mark btn-mark-unread">
@@ -323,7 +323,7 @@
                     Balas via Email
                 </a>
                 
-                <form action="{{ route('contacts.destroy', $contact->id) }}" method="POST" style="display: inline; margin: 0;">
+                <form action="{{ route('admin.contacts.destroy', $contact->id) }}" method="POST" style="display: inline; margin: 0;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" 

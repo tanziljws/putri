@@ -2,7 +2,7 @@
 
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('css/dashboard-futuristic.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/dashboard-futuristic.css') }}">
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
@@ -377,7 +377,7 @@
     <!-- Stats Grid - Glassmorphism Cards -->
     <div class="stats-grid">
         <!-- Total Galleries Card -->
-        <a href="{{ route('galleries.index') }}" style="text-decoration:none;">
+        <a href="{{ route('admin.galleries.index') }}" style="text-decoration:none;">
             <div class="glass-card">
                 <div class="neon-glow" style="top: -50px; right: -50px;"></div>
                 <div class="stat-icon">
@@ -391,7 +391,7 @@
         </a>
 
         <!-- Total Categories Card -->
-        <a href="{{ route('categories.index') }}" style="text-decoration:none;">
+        <a href="{{ route('admin.categories.index') }}" style="text-decoration:none;">
             <div class="glass-card">
                 <div class="neon-glow" style="top: -50px; right: -50px;"></div>
                 <div class="stat-icon">
@@ -405,7 +405,7 @@
         </a>
 
         <!-- Total News Card -->
-        <a href="{{ route('news.index') }}" style="text-decoration:none;">
+        <a href="{{ route('admin.news.index') }}" style="text-decoration:none;">
             <div class="glass-card">
                 <div class="neon-glow" style="top: -50px; right: -50px;"></div>
                 <div class="stat-icon">
@@ -419,7 +419,7 @@
         </a>
 
         <!-- Unread Messages Card -->
-        <a href="{{ route('contacts.index') }}" style="text-decoration:none;position:relative;display:block;">
+        <a href="{{ route('admin.contacts.index') }}" style="text-decoration:none;position:relative;display:block;">
             @if($unreadContacts > 0)
                 <div style="position:absolute;top:-12px;right:8px;min-width:40px;height:40px;background:#ef4444;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;font-weight:700;box-shadow:0 4px 20px rgba(239,68,68,0.9),0 0 0 4px #ffffff;z-index:20;padding:0 10px;border:4px solid #ffffff;animation:pulse 2s infinite;">
                     {{ $unreadContacts }}
@@ -449,7 +449,7 @@
         
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;">
             <!-- Tambah Foto -->
-            <a href="{{ route('galleries.create') }}" style="text-decoration: none;">
+            <a href="{{ route('admin.galleries.create') }}" style="text-decoration: none;">
                 <div style="background: #ffffff; border-radius: 16px; padding: 1.5rem; transition: all 0.3s; border: 1px solid #e2e8f0; cursor: pointer; height: 100%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);" 
                      onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(0, 0, 0, 0.15)'; this.style.borderColor='#3b82f6';" 
                      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.08)'; this.style.borderColor='#e2e8f0';">
@@ -468,7 +468,7 @@
             </a>
 
             <!-- Tambah Berita -->
-            <a href="{{ route('news.create') }}" style="text-decoration: none;">
+            <a href="{{ route('admin.news.create') }}" style="text-decoration: none;">
                 <div style="background: #ffffff; border-radius: 16px; padding: 1.5rem; transition: all 0.3s; border: 1px solid #e2e8f0; cursor: pointer; height: 100%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);" 
                      onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(0, 0, 0, 0.15)'; this.style.borderColor='#3b82f6';" 
                      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.08)'; this.style.borderColor='#e2e8f0';">
@@ -487,7 +487,7 @@
             </a>
 
             <!-- Tambah Kategori -->
-            <a href="{{ route('categories.create') }}" style="text-decoration: none;">
+            <a href="{{ route('admin.categories.create') }}" style="text-decoration: none;">
                 <div style="background: #ffffff; border-radius: 16px; padding: 1.5rem; transition: all 0.3s; border: 1px solid #e2e8f0; cursor: pointer; height: 100%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);" 
                      onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(0, 0, 0, 0.15)'; this.style.borderColor='#3b82f6';" 
                      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.08)'; this.style.borderColor='#e2e8f0';">
@@ -506,7 +506,7 @@
             </a>
 
             <!-- Tambah Agenda -->
-            <a href="{{ route('agendas.create') }}" style="text-decoration: none;">
+            <a href="{{ route('admin.agendas.create') }}" style="text-decoration: none;">
                 <div style="background: #ffffff; border-radius: 16px; padding: 1.5rem; transition: all 0.3s; border: 1px solid #e2e8f0; cursor: pointer; height: 100%; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);" 
                      onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 24px rgba(0, 0, 0, 0.15)'; this.style.borderColor='#3b82f6';" 
                      onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.08)'; this.style.borderColor='#e2e8f0';">
@@ -539,7 +539,7 @@
                 <h3 style="color:#f1f5f9;font-size:1.1rem;font-weight:600;margin:0 0 0.25rem 0;">🔔 Anda memiliki {{ $unreadContacts }} pesan baru!</h3>
                 <p style="color:#94a3b8;margin:0;font-size:0.9rem;">Klik untuk melihat dan membalas pesan dari pengunjung.</p>
             </div>
-            <a href="{{ route('contacts.index') }}" style="background:#ef4444;color:white;padding:0.75rem 1.5rem;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.2s;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">
+            <a href="{{ route('admin.contacts.index') }}" style="background:#ef4444;color:white;padding:0.75rem 1.5rem;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.2s;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">
                 Lihat Pesan
             </a>
         </div>
@@ -586,7 +586,7 @@
                 </svg>
                 <h2 style="color:#1e293b;font-size:1.75rem;font-weight:700;margin:0;font-family:'Poppins',sans-serif;letter-spacing:-0.5px;">Informasi Sistem</h2>
             </div>
-            <a href="{{ route('system-info.edit') }}" style="background:#3b82f6;color:#fff;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;">Edit</a>
+            <a href="{{ route('admin.system-info.edit') }}" style="background:#3b82f6;color:#fff;padding:0.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;">Edit</a>
         </div>
         <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;padding:2rem;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;">

@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Galeri Sekolah</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
@@ -970,7 +970,7 @@
             </button>
             <a href="{{ url('/') }}" style="display: flex; align-items: center; gap: 0.75rem;">
                 <div class="logo-icon">
-                    <img src="{{ asset('images/download (1).png') }}" alt="Logo" style="width: 100%; height: 100%; object-fit: contain;">
+                    <img src="{{ secure_asset('images/download (1).png') }}" alt="Logo" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <strong>Galeri Sekolah</strong>
             </a>
@@ -981,7 +981,7 @@
                     <!-- Profile Dropdown -->
                     <div class="profile-dropdown">
                         <button class="profile-button" onclick="toggleProfileDropdown()">
-                            <img src="{{ auth('admin')->user()->profile_photo ? asset('storage/' . auth('admin')->user()->profile_photo) : asset('images/default-avatar.svg') }}" 
+                            <img src="{{ auth('admin')->user()->profile_photo ? secure_asset('storage/' . auth('admin')->user()->profile_photo) : secure_asset('images/default-avatar.svg') }}" 
                                  alt="Profile" 
                                  class="profile-avatar">
                             <span>{{ auth('admin')->user()->username }}</span>
@@ -1033,7 +1033,7 @@
                 </svg>
                 Dashboard
             </a>
-            <a href="{{ route('galleries.index') }}" class="{{ request()->is('admin/galleries*') && !request()->is('admin/dashboard') ? 'active' : '' }}">
+            <a href="{{ route('admin.galleries.index') }}" class="{{ request()->is('admin/galleries*') && !request()->is('admin/dashboard') ? 'active' : '' }}">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <rect x="3" y="5" width="18" height="14" rx="3"/>
                     <circle cx="8.5" cy="12.5" r="1.5"/>
@@ -1041,7 +1041,7 @@
                 </svg>
                 Galeri
             </a>
-            <a href="{{ route('categories.index') }}" class="{{ request()->routeIs('categories.*') ? 'active' : '' }}">
+            <a href="{{ route('admin.categories.index') }}" class="{{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <rect x="3" y="3" width="7" height="7" rx="2"/>
                     <rect x="14" y="3" width="7" height="7" rx="2"/>
@@ -1050,20 +1050,20 @@
                 </svg>
                 Kategori
             </a>
-            <a href="{{ route('news.index') }}" class="{{ request()->routeIs('news.*') ? 'active' : '' }}">
+            <a href="{{ route('admin.news.index') }}" class="{{ request()->routeIs('admin.news.*') ? 'active' : '' }}">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
                 </svg>
                 Berita Terkini
             </a>
             
-            <a href="{{ route('contacts.index') }}" class="{{ request()->routeIs('contacts.*') ? 'active' : '' }}">
+            <a href="{{ route('admin.contacts.index') }}" class="{{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
                 Kontak
             </a>
-            <a href="{{ route('agendas.index') }}" class="{{ request()->routeIs('agendas.*') ? 'active' : '' }}">
+            <a href="{{ route('admin.agendas.index') }}" class="{{ request()->routeIs('admin.agendas.*') ? 'active' : '' }}">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                     <line x1="16" y1="2" x2="16" y2="6"/>

@@ -16,7 +16,7 @@
         <h3 class="form-title">Form Edit Agenda</h3>
     </div>
     
-    <form action="{{ route('agendas.update', $agenda->id) }}" method="POST" class="modern-form">
+    <form action="{{ route('admin.agendas.update', $agenda->id) }}" method="POST" class="modern-form">
         @csrf
         @method('PUT')
         
@@ -93,7 +93,7 @@
                 </svg>
                 Update Agenda
             </button>
-            <a href="{{ route('agendas.index') }}" class="btn-secondary">
+            <a href="{{ route('admin.agendas.index') }}" class="btn-secondary">
                 Kembali
             </a>
         </div>

@@ -136,7 +136,7 @@
 
 <div class="gallery-card">
     <h1>+ Tambah Galeri</h1>
-    <form action="{{ route('galleries.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.galleries.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label>Judul</label>
@@ -161,7 +161,7 @@
 
         <div class="btn-row">
             <button type="submit" class="btn-aesthetic">+ Tambah Galeri</button>
-            <a href="{{ route('galleries.index') }}" class="btn-back">Kembali</a>
+            <a href="{{ route('admin.galleries.index') }}" class="btn-back">Kembali</a>
         </div>
     </form>
 </div>

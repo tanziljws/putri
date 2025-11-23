@@ -118,7 +118,7 @@
 <div class="category-section">
     <h1>+ Tambah Kategori</h1>
 
-    <form action="{{ route('categories.store') }}" method="POST">
+    <form action="{{ route('admin.categories.store') }}" method="POST">
         @csrf
         <div class="form-group">
             <label>Nama Kategori</label>
@@ -126,7 +126,7 @@
         </div>
         <div class="btn-row">
             <button type="submit" class="btn-save">Simpan</button>
-            <a href="{{ route('categories.index') }}" class="btn-back">Kembali</a>
+            <a href="{{ route('admin.categories.index') }}" class="btn-back">Kembali</a>
         </div>
     </form>
 </div>

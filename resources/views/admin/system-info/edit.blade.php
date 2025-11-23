@@ -14,7 +14,7 @@
     @endif
 
     <div class="card">
-        <form action="{{ route('system-info.update') }}" method="POST">
+        <form action="{{ route('admin.system-info.update') }}" method="POST">
             @csrf
             @method('PUT')
 

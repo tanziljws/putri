@@ -16,7 +16,7 @@
         <h3 class="form-title">Form Edit Galeri</h3>
     </div>
     
-    <form action="{{ route('galleries.update', $gallery->id) }}" method="POST" enctype="multipart/form-data" class="modern-form">
+    <form action="{{ route('admin.galleries.update', $gallery->id) }}" method="POST" enctype="multipart/form-data" class="modern-form">
         @csrf
         @method('PUT')
         
@@ -91,7 +91,7 @@
                 </svg>
                 Update Galeri
             </button>
-            <a href="{{ route('galleries.index') }}" class="btn-secondary">
+            <a href="{{ route('admin.galleries.index') }}" class="btn-secondary">
                 Kembali
             </a>
         </div>
