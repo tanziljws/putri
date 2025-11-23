@@ -626,7 +626,6 @@
     font-size: 0.9rem;
     color: #4b5563;
     line-height: 1.6;
-    flex: 1;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -634,7 +633,7 @@
 }
 
 .news-readmore-btn {
-    margin-top: 0.75rem;
+    margin-top: auto;
     align-self: flex-start;
     background: linear-gradient(135deg, #1e3a8a, #2563eb);
     color: #ffffff;
@@ -1874,7 +1873,7 @@
     .user-gallery-container,
     .about-container {
         padding: 2rem 1.5rem;
-        margin: 2rem 1rem;
+        margin: 2rem auto;
     }
 
     .user-gallery-row {
@@ -1885,6 +1884,16 @@
     .nav-tabs .nav-link {
         padding: 0.6rem 1rem;
         font-size: 0.9rem;
+    }
+
+    /* Full-bleed bands: pastikan tidak menyebabkan scroll horizontal di mobile */
+    .gallery-header-band,
+    .gallery-cards-band {
+        left: 0;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
     }
 
     /* Jurusan Cards Responsive - Tablet */
@@ -2146,6 +2155,8 @@
 body{
     background: #4f7cff;
     color:#ffffff;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 .hero-title{font-family:'Outfit','Inter',system-ui,sans-serif;letter-spacing:.5px;background:linear-gradient(90deg,var(--c5),#fff);-webkit-background-clip:text;background-clip:text;color:transparent;}
@@ -2196,7 +2207,7 @@ div[id]:target {
     <div class="hero-content">
         <div class="hero-welcome">Selamat Datang di Shrewsbury International School</div>
         <h1 class="hero-title">
-            Jika hati benar, semuanya akan baik-baik saja. Bersama Kita Berkembang
+            Jika hati benar, semuanya akan baik-baik saja. Bersama Kita Berkembang.
         </h1>
         <p class="hero-subtitle">
             Menyusuri perjalanan sekolah penuh keajaiban, tempat di mana ilmu pengetahuan, seni, dan teknologi dipelajari dengan dedikasi tinggi.
@@ -2322,8 +2333,7 @@ div[id]:target {
 <!-- Gallery Header Section - White Background -->
 <div class="gallery-header-band">
 <div id="galeri" class="user-gallery-container">
-    <h2 class="user-gallery-title">Galeri Unggulan</h2>
-    <p class="user-gallery-subtitle">Foto-foto terpilih dari berbagai kegiatan sekolah</p>
+    <h2 class="user-gallery-title">Galeri Sekolah</h2>
     
     <!-- Search Box Galeri -->
     <div style="max-width: 600px; margin: 0 auto 2rem;">
@@ -2412,7 +2422,7 @@ div[id]:target {
 <!-- News Header Section - White Background -->
 <div class="gallery-header-band">
     <div id="berita" class="user-gallery-container">
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem;">
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
             <h2 class="user-gallery-title" style="margin-bottom:0;">Berita Terkini</h2>
             <a href="{{ route('user.news.index') }}" class="news-see-all-btn">Lihat Semua Berita</a>
         </div>

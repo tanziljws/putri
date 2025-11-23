@@ -111,6 +111,32 @@
     overflow: hidden;
 }
 
+.berita-readmore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+    margin-top: 0.25rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.berita-readmore-btn i {
+    font-size: 0.85rem;
+    transition: transform 0.2s ease;
+}
+
+.berita-readmore-btn:hover {
+    color: #1d4ed8;
+    transform: translateX(2px);
+}
+
+.berita-readmore-btn:hover i {
+    transform: translateX(2px);
+}
+
 .pagination {
     display: flex;
     justify-content: center;
@@ -183,6 +209,10 @@
                     <p class="berita-excerpt">
                         {{ Str::limit(strip_tags($item->content), 150) }}
                     </p>
+                    <a href="{{ route('user.news.show', $item->id) }}" class="berita-readmore-btn">
+                        <span>Lihat Selengkapnya</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         @empty

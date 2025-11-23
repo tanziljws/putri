@@ -14,8 +14,8 @@
 }
 
 body {
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
-    color: #1f2937;
+    background: #0f172a;
+    color: #e2e8f0;
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
 }
@@ -328,7 +328,10 @@ body {
 
 <div class="agenda-hero">
     <div class="container">
-        <h1>Agenda Kegiatan</h1>
+        <h1>
+            <i class="fas fa-calendar-alt"></i>
+            <span>Agenda Kegiatan</span>
+        </h1>
         <p>Jadwal kegiatan dan acara sekolah yang akan datang</p>
     </div>
 </div>
